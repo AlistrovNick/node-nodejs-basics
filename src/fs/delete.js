@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const srcDir = 'files';
 const filename = 'fileToRemove.txt';
 
 const isExist = (path) => {
@@ -12,7 +13,7 @@ const isExist = (path) => {
 };
 
 export const remove = async () => {
-    const filePath = path.join(__dirname, filename);
+    const filePath = path.join(__dirname, srcDir, filename);
     let isFileNotExist = !(await isExist(filePath));
 
     if (isFileNotExist) {
