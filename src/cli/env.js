@@ -1,3 +1,6 @@
 export const parseEnv = () => {
-    // Write your code here 
+    let vars = process.env;
+    for (const prop in vars) {
+        console.log(`RSS_${prop}=${vars[prop]}`);
+    }
 };
